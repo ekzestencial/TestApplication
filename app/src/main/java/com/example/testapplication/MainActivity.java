@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
                     AlertDialog alert = builder.create();
                     System.out.println("False");
                     alert.show();
-
                 }
             }
         });

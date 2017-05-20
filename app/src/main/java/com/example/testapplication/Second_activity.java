@@ -13,24 +13,22 @@ import android.widget.EditText;
 
 public class Second_activity extends AppCompatActivity {
     Button myBtnRegistration;
-    EditText emailText;
-    EditText passwordText;
+     EditText emailText;
+     EditText passwordText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_activity);
+        final EmailValidator validator = new EmailValidator();
         myBtnRegistration = (Button) findViewById(R.id.registration2_id);
         emailText = (EditText) findViewById(R.id.emailReg_id);
         passwordText = (EditText) findViewById(R.id.passwordReg_id);
-
         myBtnRegistration.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String strEmail = emailText.getText().toString();
                 String strPassword = passwordText.getText().toString();
-
-
                 AlertDialog.Builder builder = new AlertDialog.Builder(Second_activity.this);
                 if (strEmail.length() <= 6 && strPassword.length() <= 4) {
                     builder.setTitle("Alert")
@@ -57,6 +55,19 @@ public class Second_activity extends AppCompatActivity {
                                         }
                                     });
                     AlertDialog alert = builder.create();
+                    alert.show();
+                } else if (!validator.validate(strEmail)) {
+                    builder.setTitle("Alert")
+                            .setMessage("This email isn't valid, please check it again.")
+                            .setCancelable(false)
+                            .setNegativeButton("Ok",
+                                    new DialogInterface.OnClickListener() {
+                                        public void onClick(DialogInterface dialog, int id) {
+                                            dialog.cancel();
+                                        }
+                                    });
+                    AlertDialog alert = builder.create();
+                    System.out.println("False");
                     alert.show();
                 } else {
                     Intent intent = new Intent(Second_activity.this, MainActivity.class);
