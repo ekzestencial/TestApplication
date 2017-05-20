@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TestApplication</string>
+    <string name="my_secondScreen">My Second Screen</string>
+    <string name="email"></string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+    <string name="sign_in">Sign In</string>
+    <string name="title_activity_second_activity">Second_activity</string>
+    <string name="title_activity_third">ThirdActivity</string>
+</resources>
