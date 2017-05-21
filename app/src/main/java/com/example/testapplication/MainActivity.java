@@ -1,5 +1,6 @@
 package com.example.testapplication;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,11 +15,14 @@ public class MainActivity extends AppCompatActivity {
     Button myBtnSignUp;
     EditText emailText;
     EditText passwordText;
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        context=MainActivity.this;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        final SharedPreferencesTest shrPrf = new SharedPreferencesTest(context);
         myBtnRegister = (Button) findViewById(R.id.register_id);
         myBtnSignUp = (Button) findViewById(R.id.signUp_Id);
         emailText = (EditText) findViewById(R.id.Email_id);
@@ -36,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String strEmail = emailText.getText().toString();
                 String strPassword = passwordText.getText().toString();
-                if (SingletonSession.Instance().enterCheckPassword(strEmail, strPassword)) {
+                if (shrPrf.enterCheckPassword(strEmail, strPassword)) {
                     Intent intent = new Intent(MainActivity.this, ThirdActivity.class);
                     startActivity(intent);
                 } else {

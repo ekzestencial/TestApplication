@@ -23,6 +23,14 @@
         <activity
             android:name=".ThirdActivity"
             android:label="@string/title_activity_third"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SharedPreferenceTest"
+            android:label="@string/title_activity_shared_preference_test"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SharedPreferencesTest"
+            android:label="@string/title_activity_shared_preferences_test"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
