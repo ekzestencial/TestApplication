@@ -7,4 +7,6 @@
     <string name="sign_in">Sign In</string>
     <string name="title_activity_second_activity">Second_activity</string>
     <string name="title_activity_third">ThirdActivity</string>
+    <string name="title_activity_shared_preference_test">SharedPreferenceTest</string>
+    <string name="title_activity_shared_preferences_test">SharedPreferencesTest</string>
 </resources>
